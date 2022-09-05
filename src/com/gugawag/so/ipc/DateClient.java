@@ -19,9 +19,11 @@ public class DateClient {
 			Socket sock = new Socket("localhost",6013);
 			InputStream in = sock.getInputStream();
 			BufferedReader bin = new BufferedReader(new InputStreamReader(in));
+			PrintWriter pout = new PrintWriter(sock.getOutputStream(), true);
 
 			System.out.println("=== Cliente iniciado ===\n");
 
+			pout.println("John Ewerton Marques Meireles");
 			String line = bin.readLine();
 			System.out.println("O servidor me disse:" + line);
 				
